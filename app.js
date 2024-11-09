@@ -14,7 +14,7 @@ connectDb();
 const port = process.env.PORT || 2003
 
 app.use(cors({
-    origin:"http://localhost:2000",
+    origin:["http://localhost:2000","https://backend-bookstore-9xux.onrender.com"],
     credentials:true
 }))
 // Session Middleware
@@ -25,7 +25,7 @@ app.use(session({
     store: MongoStore.create({ 
       mongoUrl: process.env.MONGOURI, 
     }),
-    cookie: { secure: false, maxAge: 1000 * 60 * 60 * 24 } 
+    cookie: { secure:true, maxAge: 1000 * 60 * 60 * 24 } 
   }));
 
 app.use(express.json())
