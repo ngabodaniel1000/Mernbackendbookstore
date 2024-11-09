@@ -25,7 +25,12 @@ app.use(session({
     store: MongoStore.create({ 
       mongoUrl: process.env.MONGOURI, 
     }),
-    cookie: { secure:true, maxAge: 1000 * 60 * 60 * 24 } 
+    cookie: {
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+    domain: process.env.COOKIE_DOMAIN, // Add this for cross-domain cookies
+    maxAge: 24 * 60 * 60 * 1000
+  },
   }));
 
 app.use(express.json())
