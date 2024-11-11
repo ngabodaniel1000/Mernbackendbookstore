@@ -26,7 +26,7 @@ app.use(session({
       mongoUrl: process.env.MONGOURI, 
     }),
     cookie: {
-    secure: 'true',
+    secure: 'false',
     sameSite: 'none',
     domain: process.env.COOKIE_DOMAIN, // Add this for cross-domain cookies
     maxAge: 24 * 60 * 60 * 1000
