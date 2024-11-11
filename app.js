@@ -27,7 +27,7 @@ app.use(session({
     }),
     cookie: {
     secure: 'true',
-    sameSite: 'None',
+    sameSite: 'none',
     domain: process.env.COOKIE_DOMAIN, // Add this for cross-domain cookies
     maxAge: 24 * 60 * 60 * 1000
   },
