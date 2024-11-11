@@ -3,7 +3,7 @@ const router = express.Router()
 const controller = require("../controller/controller")
 
 router.get("/",(req,res)=>{
-    res.send("Backend for mern bookstore")
+    res.send("Backend for mern bookstore app")
 })
 
 router.post("/signup",controller.signup)
